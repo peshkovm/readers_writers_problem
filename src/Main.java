@@ -1,4 +1,7 @@
 import java.util.Arrays;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
     static final int WRITER_COUNT = 8;
@@ -15,7 +18,7 @@ public class Main {
         WriterWork writerWork = new WriterWork(buffer, logFile);
         ReaderWork readerWork = new ReaderWork(buffer, logFile);
 
-        for (int i = 0; i < WRITER_COUNT; i++) {
+/*        for (int i = 0; i < WRITER_COUNT; i++) {
             new Thread(writerWork).start();
         }
 
@@ -28,6 +31,20 @@ public class Main {
             System.out.println("All threads have stopped");
         } catch (InterruptedException e) {
             e.printStackTrace();
+        }*/
+
+        //------------------------------------
+        ExecutorService executor = Executors.newCachedThreadPool();
+        for (int i = 0; i < WRITER_COUNT; i++) {
+            executor.submit(writerWork);
         }
+
+        for (int i = 0; i < READER_COUNT; i++) {
+            executor.submit(readerWork);
+        }
+
+        executor.shutdown();
+        executor.awaitTermination(Integer.MAX_VALUE, TimeUnit.DAYS); //forever
+        System.out.println("All threads have stopped");
     }
 }

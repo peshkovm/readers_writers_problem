@@ -25,8 +25,8 @@ class ReaderWork implements Runnable {
                     page = buffer.findFilledCell();
                     if (page > -1 && !buffer.isLocked(page))
                         break;
-                    logFile.writeToFile("Filled page not found. Sleeping");
-                    Thread.sleep(300);
+                    //logFile.writeToFile("Filled page not found. Sleeping");
+                    //Thread.sleep(300);
                 }
                 logFile.writeToFile("Found filled page # " + page);
                 buffer.lockLock(page);

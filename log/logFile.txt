@@ -1,6 +1,6 @@
 Wait emptySemaphore
+Acquire emptySemaphore
 Wait emptySemaphore
-Wait filledSemaphore
 Wait emptySemaphore
 Acquire emptySemaphore
 Wait emptySemaphore
@@ -10,16 +10,16 @@ Acquire emptySemaphore
 Wait emptySemaphore
 Acquire emptySemaphore
 Wait emptySemaphore
-Wait filledSemaphore
-Wait filledSemaphore
-Wait filledSemaphore
-Wait filledSemaphore
-Wait filledSemaphore
-Wait filledSemaphore
-Wait filledSemaphore
-Acquire emptySemaphore
 Wait emptySemaphore
 Acquire emptySemaphore
+Wait filledSemaphore
+Wait filledSemaphore
+Wait filledSemaphore
+Wait filledSemaphore
+Wait filledSemaphore
+Wait filledSemaphore
+Wait filledSemaphore
+Wait filledSemaphore
 Found clear page # 0
 Lock page # 0
 Found clear page # 1
@@ -32,61 +32,49 @@ Found clear page # 4
 Lock page # 4
 Found clear page # 5
 Lock page # 5
-Write 48 to buffer page # 4
+Write 66 to buffer page # 5
+Write 29 to buffer page # 4
+Write 6 to buffer page # 3
 Acquire filledSemaphore
-Filled page not found. Sleeping
-Filled page not found. Sleeping
-Filled page not found. Sleeping
-Write 9 to buffer page # 1
-Acquire filledSemaphore
-Filled page not found. Sleeping
-Filled page not found. Sleeping
-Filled page not found. Sleeping
-Filled page not found. Sleeping
-Write 26 to buffer page # 5
-Write 24 to buffer page # 3
-Write 29 to buffer page # 2
-Acquire filledSemaphore
-Write 76 to buffer page # 0
-Acquire filledSemaphore
-Acquire filledSemaphore
+Write 96 to buffer page # 0
 Acquire filledSemaphore
 Found filled page # 0
-Filled page not found. Sleeping
+Acquire filledSemaphore
+Acquire filledSemaphore
 Lock page # 0
+Write 43 to buffer page # 1
+Acquire filledSemaphore
 Found filled page # 1
-Filled page not found. Sleeping
 Lock page # 1
+Write 83 to buffer page # 2
 Found filled page # 2
+Acquire filledSemaphore
 Lock page # 2
-Filled page not found. Sleeping
 Found filled page # 3
-Filled page not found. Sleeping
 Lock page # 3
 Found filled page # 4
-Filled page not found. Sleeping
 Lock page # 4
 Found filled page # 5
 Lock page # 5
-Read 29 from buffer page # 2
+Read 43 from buffer page # 1
+Read 29 from buffer page # 4
 Acquire emptySemaphore
-Read 76 from buffer page # 0
 Acquire emptySemaphore
+Read 96 from buffer page # 0
 Found clear page # 0
 Lock page # 0
-Read 9 from buffer page # 1
 Found clear page # 1
 Lock page # 1
-Read 24 from buffer page # 3
+Read 6 from buffer page # 3
+Read 83 from buffer page # 2
+Read 66 from buffer page # 5
 Write 60 to buffer page # 0
 Acquire filledSemaphore
 Found filled page # 0
 Lock page # 0
-Read 48 from buffer page # 4
-Read 26 from buffer page # 5
-Read 60 from buffer page # 0
-Write 72 to buffer page # 1
+Write 26 to buffer page # 1
 Acquire filledSemaphore
 Found filled page # 1
 Lock page # 1
-Read 72 from buffer page # 1
+Read 60 from buffer page # 0
+Read 26 from buffer page # 1
